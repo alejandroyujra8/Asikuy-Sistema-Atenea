@@ -1,0 +1,144 @@
+/* Estilos generales */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #35C0CA, #3F4FA1);
+    overflow-x: hidden; /* Evita scroll lateral innecesario */
+}
+
+/* Login Container */
+.login-container {
+    width: 80%; /* Ancho del 80% del viewport */
+    height: 80vh; /* Altura del 80% del viewport */
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 15px 25px rgba(0, 0, 0, 0.2); /* Sombra */
+    position: relative;
+}
+
+/* Sombra inferior negra */
+.login-container::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.15); /* Sombra más suave */
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+/* Sección izquierda */
+.left-section {
+    background: linear-gradient(120deg, #35C0CA, #3F4FA1);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título "Bienvenido de nuevo" */
+.left-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 36px; /* Tamaño grande para pantallas mayores */
+    line-height: 1.2; /* Separación entre líneas */
+}
+
+/* Imagen del personaje */
+.left-section img {
+    max-width: 220px; /* Ajustamos el tamaño de la imagen */
+}
+
+/* Sección derecha (formulario) */
+.right-section {
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    max-width: 180px;
+}
+
+/* Título del formulario */
+.form-title {
+    font-size: 24px;
+    color: #3F51A2;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Inputs flotantes */
+.form-floating .form-control {
+    border: 2px solid #3F51A2;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.form-floating label {
+    color: #3F51A2;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover y focus para inputs */
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+    transform: translate(-10px, -25px) scale(0.85);
+    color: #3F51A2;
+}
+
+/* Estilo del botón */
+.btn-primary {
+    background-color: #3F51A2;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #35C0CA;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 95%; /* Aumentamos el ancho para móviles */
+        height: auto; /* Cambiamos altura a auto para pantallas pequeñas */
+        overflow-y: auto; /* Habilitamos el desplazamiento vertical si es necesario */
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+    }
+
+    .login-container::after {
+        width: 95%;
+    }
+
+    .left-section h2 {
+        font-size: 30px; /* Tamaño más pequeño en móviles */
+        line-height: normal; /* Volvemos a la línea normal */
+    }
+
+    .left-section img {
+        max-width: 180px; /* Ajustamos la imagen en móviles */
+    }
+
+    /* Ajustes en modo horizontal */
+    @media (orientation: landscape) {
+        .login-container {
+            height: auto; /* Auto para permitir scroll */
+            max-height: 100vh; /* No sobrepasar el viewport */
+            overflow-y: auto; /* Scroll si es necesario */
+        }
+    }
+}

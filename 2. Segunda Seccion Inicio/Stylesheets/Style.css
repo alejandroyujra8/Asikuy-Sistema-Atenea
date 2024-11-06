@@ -1,0 +1,829 @@
+/* ------------------------ */
+/* Estilos del Header */
+header {
+    background-color: transparent;
+    transition: all 0.3s ease;
+    padding: 20px 0;
+    border-radius: 10px;
+}
+
+header.scrolled {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #3F51A2;
+    padding: 6px 12px;
+    margin: 0 5px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #E3E6F3;
+    color: #3F51A2;
+}
+
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link.active {
+    background-color: #3F51A2;
+    color: white !important;
+}
+
+/* Ajustes para las imágenes SVG */
+.header-logo,
+.header-user-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+    /* Aplicamos la sombra directamente al SVG */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Alineación vertical de los elementos del navbar */
+.navbar .navbar-brand,
+.dropdown .user-icon {
+    display: flex;
+    align-items: center;
+}
+
+/* Aseguramos que el logo y el icono de usuario estén a la misma altura */
+.navbar-brand,
+.user-icon {
+    margin-top: -4px; /* Ajusta este valor según sea necesario */
+}
+
+.dropdown-menu {
+    min-width: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+    border-radius: 8px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: red;
+    color: white;
+}
+
+.dropdown-menu-end {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.logout-link {
+    padding: 10px 15px;
+}
+
+.logout-link:hover {
+    background-color: red !important;
+    color: white !important;
+    border-radius: 8px;
+}
+
+header.scrolled {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-collapse {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler {
+    border-color: #3F51A2;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%2831, 49, 162, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ------------------------ */
+/* Sección principal con fondo gradiente */
+.main-container {
+    background: linear-gradient(120deg, #35C0CA, #3F4FA1);
+    padding-top: 120px; /* Espacio para el header */
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: calc(100vh - 120px); /* Altura mínima restando el header */
+}
+
+.custom-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    /* Aplicamos la sombra directamente a la imagen */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.custom-card {
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    margin-left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -20px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid white;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    transform: rotate(45deg);
+}
+
+.text-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3F51A2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.countdown-item {
+    flex: 1;
+    border: 1px solid #3F51A2;
+    border-radius: 18px;
+    color: #3F51A2;
+    padding: 15px;
+}
+
+.count-value {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.count-label {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Ajustes para que las secciones no sean tan anchas */
+.container {
+    max-width: 960px;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col-lg-7, .col-lg-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    /* Ocultar icono de usuario en dispositivos medianos y pequeños */
+    .dropdown .user-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-title {
+        font-size: 24px;
+    }
+
+    .count-value {
+        font-size: 32px;
+    }
+
+    .count-label {
+        font-size: 14px;
+    }
+
+    .custom-card {
+        margin-left: 0;
+    }
+}
+
+/* ------------------------ */
+/* Estilo de la sección "¿Qué Hacemos Ahora?" */
+.section-what-now {
+    background-color: #f4f9fc;
+}
+
+/* Título de la sección */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #3F51A2;
+}
+
+/* Estilo de los action-cards */
+.action-card {
+    background-color: #398FB8; /* Color de fondo de los action-cards */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    color: white;
+    cursor: pointer;
+    height: 100%; /* Ajuste de altura para uniformidad */
+    display: flex;
+    align-items: center;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    background-color: #317A9E; /* Color al hacer hover, similar al "Iniciar sesión" */
+}
+
+/* Ícono y texto alineados */
+.action-icon {
+    max-width: 40px;
+    height: auto;
+}
+
+.action-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+}
+
+/* Asegurar el mismo tamaño en pantallas grandes */
+@media (min-width: 992px) {
+    .action-card {
+        min-height: 120px; /* Ajuste de altura para que sean del mismo tamaño */
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+    .action-text {
+        font-size: 16px;
+    }
+    .action-icon {
+        max-width: 35px;
+    }
+}
+/* ------------------------ */
+/* Estilo de la sección "Tus citas de hoy" */
+.section-appointments {
+    background: linear-gradient(120deg, #35C0CA, #3F4FA1);
+    min-height: 672px; /* 20% menos que el original de 840px */
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Globo del título centrado */
+.appointments-bubble {
+    background-color: white;
+    padding: 20px 40px; /* Mayor padding para el título */
+    border-radius: 10px; /* Menos redondeo en los bordes */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.appointments-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold; /* Negrita para ambos modos */
+    color: #3F51A2; /* Color del título */
+    margin: 0;
+}
+
+/* Imagen del muñequito */
+.character-image {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Card de citas */
+.appointments-card {
+    background-color: white;
+    border-radius: 10px;
+    max-height: 560px;
+    overflow-y: auto;
+}
+
+/* Tabla de citas */
+.appointments-table {
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.table th {
+    color: #3F51A2; /* Color del texto en el encabezado */
+    font-size: 16px;
+    font-weight: bold; /* Negrita en el encabezado */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #317A9E; /* Color de la línea del encabezado */
+}
+
+.table td {
+    color: #3F51A2; /* Color del texto en las filas */
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+}
+
+.table tbody tr:not(:last-child) {
+    border-bottom: 1px solid #317A9E; /* Línea divisoria entre filas */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .section-appointments {
+        min-height: auto;
+    }
+    .character-image {
+        display: none;
+    }
+    .appointments-bubble {
+        display: block;
+        margin-bottom: 20px;
+    }
+    .appointments-title {
+        font-size: 20px;
+        font-weight: bold; /* Negrita en el modo responsivo también */
+    }
+}
+
+/* ------------------------ */
+/* Estilo de la sección "Agenda una nueva cita" */
+.section-schedule {
+    background-color: white;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Globo del título centrado */
+.schedule-bubble {
+    background-color: #f4f9fc;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.schedule-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3F51A2;
+    margin: 0;
+}
+
+/* Imagen del muñequito */
+.character-image {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Card del formulario de citas */
+.schedule-card {
+    background-color: white;
+    border: 2px solid #3F51A2;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Estilo de los inputs */
+.form-control {
+    border: 1px solid #317A9E;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3F51A2;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+/* Icono de lupa */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    max-width: 20px;
+    pointer-events: none;
+}
+
+/* Botón de guardar alineado a la derecha */
+.btn-submit {
+    background-color: #3F51A2;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-submit:hover {
+    background-color: #2e3e82;
+    color: white; /* Mantene
+
+
+
+/* ------------------------ */
+/* Estilo de la sección "Envía un mensaje rápido" */
+.section-quick-message {
+    background: linear-gradient(120deg, #35C0CA, #3F4FA1);
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Globo del título centrado */
+.message-bubble {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.message-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3F51A2;
+    margin: 0;
+}
+
+/* Imagen del muñequito */
+.character-image {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Card del formulario de mensaje */
+.message-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Estilo de los inputs y textarea */
+.form-control {
+    border: 1px solid #317A9E;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3F51A2;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+/* Icono de lupa */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    max-width: 20px;
+    pointer-events: none;
+}
+
+/* Botón de enviar */
+.btn-submit {
+    background-color: #3F51A2;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: right;
+    float: right;
+}
+
+.btn-submit:hover {
+    background-color: #2e3e82;
+    color: white; /* Mantener el texto en blanco al hacer hover */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .section-quick-message {
+        min-height: auto;
+    }
+    .character-image {
+        display: none;
+    }
+    .message-bubble {
+        display: block;
+        margin-bottom: 20px;
+    }
+    .message-title {
+        font-size: 20px;
+    }
+}
+}
+
+/* ------------------------ */
+/* Estilo de la sección "Envía un mensaje rápido" */
+.section-quick-message {
+    background: linear-gradient(120deg, #35C0CA, #3F4FA1);
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Globo del título centrado */
+.message-bubble {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 8px; /* Menos redondeo para igualar el prototipo */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.message-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px; /* Tamaño de fuente ajustado */
+    font-weight: bold;
+    color: #3F51A2;
+    margin: 0;
+}
+
+/* Imagen del muñequito */
+.character-image {
+    max-width: 60%;
+    height: auto;
+}
+
+/* Card del formulario de mensaje */
+.message-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    border: 2px solid #3F51A2;
+}
+
+/* Estilo de los inputs y textarea */
+.form-control {
+    border: 1px solid #317A9E;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3F51A2;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+/* Icono de lupa */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    max-width: 20px;
+    pointer-events: none;
+}
+
+/* Botón de enviar alineado a la derecha */
+.text-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit {
+    background-color: #3F51A2;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #2e3e82;
+    color: white; /* Mantener el texto en blanco al hacer hover */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .section-quick-message {
+        min-height: auto;
+    }
+    .character-image {
+        display: none;
+    }
+    .message-bubble {
+        display: block;
+        margin-bottom: 20px;
+    }
+    .message-title {
+        font-size: 22px;
+    }
+}
+
+/* ------------------------ */
+/* Estilo de la sección "Cancelar una cita" */
+.section-cancel-appointment {
+    background-color: white;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Globo del título centrado */
+.cancel-bubble {
+    background-color: #f4f9fc;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.cancel-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #3F51A2;
+    margin: 0;
+}
+
+/* Imagen del muñequito */
+.character-image {
+    max-width: 60%;
+    height: auto;
+}
+
+/* Card del formulario de cancelación */
+.cancel-card {
+    background-color: white;
+    border: 2px solid #3F51A2;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Estilo de los inputs */
+.form-control {
+    border: 1px solid #317A9E;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3F51A2;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+/* Mensaje de texto predeterminado centrado */
+.placeholder-text {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    text-align: center;
+}
+
+/* Checkbox de confirmación con icono */
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid #317A9E;
+}
+
+.form-check-input:checked ~ #checkIcon {
+    display: inline; /* Mostrar el icono al marcar el checkbox */
+    color: #3F51A2;
+}
+
+#checkIcon {
+    font-size: 18px;
+    color: #3F51A2;
+}
+
+/* Botón de guardar alineado a la derecha */
+.text-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit {
+    background-color: #3F51A2;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #2e3e82;
+    color: white; /* Mantener el texto en blanco al hacer hover */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .section-cancel-appointment {
+        min-height: auto;
+    }
+    .character-image {
+        max-width: 50%;
+    }
+    .cancel-bubble {
+        display: block;
+        margin-bottom: 20px;
+    }
+    .cancel-title {
+        font-size: 22px;
+    }
+}
+
+/* ------------------------ */
+/* Estilo del footer */
+.footer-section {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo .footer-image {
+    max-width: 150px; /* Tamaño de la imagen en el footer */
+    height: auto;
+}
+
+/* Estilo del botón "Volver al inicio" */
+.back-to-top-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-to-top-btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Responsivo para footer */
+@media (max-width: 768px) {
+    .footer-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+}
+.header-logo, .header-user-icon {
+    transition: fill 0.3s ease;
+}
+
+/* Color azul para el logo cuando se hace scroll */
+.logo-blue {
+    fill: #3F51A2; /* Cambia al color azul */
+}
+

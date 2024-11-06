@@ -1,0 +1,533 @@
+/* ------------------------ */
+/* Variables CSS para facilitar el mantenimiento */
+:root {
+    --color-primario: #3F51A2;
+    --color-secundario: #35C0CA;
+    --color-hover: #2e3e82;
+    --color-fondo-seccion: #f4f9fc;
+    --color-blanco: #ffffff;
+    --color-gris: #888;
+    --color-footer: #333;
+}
+
+/* ------------------------ */
+/* Estilos del Header */
+header {
+    background-color: transparent;
+    transition: all 0.3s ease;
+    padding: 20px 0;
+    border-radius: 10px;
+}
+
+header.scrolled {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: var(--color-primario);
+    padding: 6px 12px;
+    margin: 0 5px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #E3E6F3;
+    color: var(--color-primario);
+}
+
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link.active {
+    background-color: var(--color-primario);
+    color: var(--color-blanco) !important;
+}
+
+/* Ajustes para las imágenes SVG */
+.header-logo,
+.header-user-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3)); /* Sombra más fuerte */
+    transition: fill 0.3s ease;
+}
+
+.header-logo.logo-blue,
+.header-user-icon.logo-blue {
+    fill: var(--color-primario);
+}
+
+/* Alineación vertical de los elementos del navbar */
+.navbar .navbar-brand,
+.dropdown .user-icon {
+    display: flex;
+    align-items: center;
+}
+
+/* Aseguramos que el logo y el icono de usuario estén a la misma altura */
+.navbar-brand,
+.user-icon {
+    margin-top: -4px; /* Ajusta este valor según sea necesario */
+}
+
+.dropdown-menu {
+    min-width: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+    border-radius: 8px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: red;
+    color: var(--color-blanco);
+}
+
+.dropdown-menu-end {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.logout-link {
+    padding: 10px 15px;
+}
+
+.logout-link:hover {
+    background-color: red !important;
+    color: var(--color-blanco) !important;
+    border-radius: 8px;
+}
+
+/* Navbar collapse styling */
+.navbar-collapse {
+    background-color: var(--color-blanco);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler {
+    border-color: var(--color-primario);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%2831, 49, 162, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ------------------------ */
+/* Estilo de la sección "Agenda una nueva cita" */
+.main-container {
+    background: linear-gradient(120deg, var(--color-secundario), #3F4FA1);
+    padding-top: 120px; /* Espacio para el header */
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: calc(100vh - 120px); /* Altura mínima restando el header */
+}
+
+.container {
+    max-width: 960px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.schedule-bubble {
+    background-color: var(--color-fondo-seccion);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.schedule-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin: 0;
+    /* Eliminada la sombra de texto */
+}
+
+.character-image {
+    max-width: 70%;
+    height: auto;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3)); /* Sombra más pronunciada */
+}
+
+.schedule-card {
+    background-color: var(--color-blanco);
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que ocupe todo el ancho de la columna */
+}
+
+/* Estilo de los inputs */
+.form-control {
+    border: 1px solid #317A9E;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--color-primario);
+    padding: 10px 12px;
+    margin-bottom: 10px;
+}
+
+.form-control::placeholder {
+    color: var(--color-gris);
+}
+
+/* Icono de lupa */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    max-width: 20px;
+    pointer-events: none;
+}
+
+/* Botón de guardar alineado a la derecha */
+.text-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-hover);
+    color: var(--color-blanco);
+}
+
+/* ------------------------ */
+/* Estilo de la sección "Tus citas de hoy" */
+.section-appointments {
+    background-color: white; /* Fondo blanco */
+    min-height: 672px; /* Mantener la altura mínima */
+    padding: 60px 20px; /* Consistencia en padding */
+    display: flex;
+    align-items: center;
+}
+
+.appointments-bubble {
+    background-color: var(--color-blanco);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+    display: inline-block;
+}
+
+.appointments-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin: 0;
+    /* Eliminada la sombra de texto */
+}
+
+.section-appointments .character-image {
+    max-width: 70%;
+    height: auto;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.4)); /* Sombra más pronunciada y fuerte */
+}
+
+.appointments-card {
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    max-height: 560px;
+    overflow-y: auto;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+    width: 100%; /* Asegura que ocupe todo el ancho de la columna */
+}
+
+.table th,
+.table td {
+    color: var(--color-primario);
+    font-size: 16px;
+    text-align: center;
+}
+
+.table th {
+    font-weight: bold;
+    border-bottom: 2px solid #317A9E;
+}
+
+.table tbody tr:not(:last-child) {
+    border-bottom: 1px solid #317A9E;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .section-appointments {
+        min-height: auto;
+    }
+    .section-appointments .character-image {
+        display: none;
+    }
+    .appointments-bubble {
+        display: block;
+        margin-bottom: 20px;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte en móvil */
+    }
+    .appointments-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+/* ------------------------ */
+/* Estilo de la sección "Reprograma una cita" */
+.section-reschedule {
+    background: linear-gradient(120deg, var(--color-secundario), #3F4FA1); /* Fondo con degradado */
+    padding: 60px 20px; /* Ajusta los paddings para respetar los márgenes */
+    margin: 0 auto; /* Centra la sección si es necesario */
+    display: flex;
+    align-items: center;
+}
+
+.reschedule-bubble {
+    background-color: var(--color-blanco);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+    display: inline-block;
+}
+
+.reschedule-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin: 0;
+    background-color: var(--color-blanco); /* Fondo blanco para el título */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.character-image-reschedule {
+    max-width: 70%;
+    height: auto;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.4)); /* Sombra más pronunciada y fuerte */
+    transform: scaleX(-1); /* Voltea la imagen horizontalmente */
+}
+
+.reschedule-card {
+    background-color: var(--color-blanco);
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra igual a .schedule-card */
+    width: 100%; /* Ocupa todo el ancho de la columna */
+}
+
+.reschedule-card .form-control {
+    margin-bottom: 15px;
+}
+
+.reschedule-card .row > .col {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.reschedule-card .row > .col:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/* Responsivo para la sección "Reprograma una cita" */
+@media (max-width: 768px) {
+    .section-reschedule {
+        padding: 40px 10px;
+    }
+    .reschedule-bubble {
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte en móvil */
+    }
+    .reschedule-title {
+        font-size: 20px;
+    }
+    .character-image-reschedule {
+        display: none;
+    }
+}
+
+/* ------------------------ */
+/* Estilo de la sección "Cancelar una cita" */
+.section-cancel-appointment {
+    background-color: white;
+    padding: 60px 20px; /* Aumentado para más espaciado */
+    display: flex;
+    align-items: center;
+}
+
+.cancel-bubble {
+    background-color: #f4f9fc;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.cancel-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin: 0;
+}
+
+.character-image-cancel {
+    max-width: 60%;
+    height: auto;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3)); /* Sombra más pronunciada */
+}
+
+.cancel-card {
+    background-color: white;
+    border: 2px solid var(--color-primario);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra igual a otras tarjetas */
+    width: 100%; /* Asegura que ocupe todo el ancho de la columna */
+}
+
+/* Estilo de los inputs */
+.cancel-card .form-control {
+    border: 1px solid #317A9E;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--color-primario);
+    padding: 10px 12px;
+    margin-bottom: 10px;
+}
+
+.cancel-card .form-control::placeholder {
+    color: var(--color-gris);
+}
+
+/* Mensaje de texto predeterminado centrado */
+.placeholder-text {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    text-align: center;
+}
+
+/* Checkbox de confirmación con icono */
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid #317A9E;
+}
+
+.form-check-input:checked ~ #checkIcon {
+    display: inline; /* Mostrar el icono al marcar el checkbox */
+    color: var(--color-primario);
+}
+
+#checkIcon {
+    font-size: 18px;
+    color: var(--color-primario);
+}
+
+/* Botón de guardar alineado a la derecha */
+.text-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-hover);
+    color: var(--color-blanco);
+}
+
+/* ------------------------ */
+/* Estilo del Footer */
+.footer-section {
+    background-color: var(--color-footer);
+    color: var(--color-blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo .footer-image {
+    max-width: 150px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)); /* Sombra más fuerte */
+}
+
+.back-to-top-btn {
+    background-color: transparent;
+    border: 1px solid var(--color-blanco);
+    color: var(--color-blanco);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--color-blanco);
+    color: var(--color-footer);
+}
+
+/* Responsivo para footer */
+@media (max-width: 768px) {
+    .footer-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+}
+
+/* ------------------------ */
+/* Otros estilos comunes */
+.logo-blue {
+    fill: var(--color-primario);
+}
+
+/* ------------------------ */
+/* Responsividad adicional para ocultar la imagen en "Cancelar una cita" */
+@media (max-width: 768px) {
+    .character-image-cancel {
+        display: none;
+    }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda una Nueva Cita</title>
+    <link rel="icon" href="../Images/Asikuy Web.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Stylesheets/Style.css">
+</head>
+<body>
+
+    <!-- Header -->
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4">
+        <div class="container">
+            <a class="navbar-brand" href="../2. Segunda Seccion Inicio/Inicio.html">
+                <img src="Images/Asikuy responsive.svg" alt="Logo izquierdo" class="header-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../3. Tercera Seccion Gestión de citas/Gestion de citas.html">Gestión de citas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../4. Cuarta Seccion Recordatorios/recordatorios.html">Recordatorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../6. Sexta Seccion Pacientes/pacientes.html">Pacientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../5. Quinta Seccion Documentos/documentos.html">Documentos Médicos</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link logout-link" href="../index.html">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown d-none d-lg-block">
+                <a href="#" class="user-icon" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="Images/Login.svg" alt="Icono Usuario" class="header-user-icon">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item logout-link" href="../index.html">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <!-- Main Section: Agenda una Nueva Cita -->
+    <div class="main-container">
+        <div class="container text-center">
+            <div class="schedule-bubble mx-auto mb-4">
+                <h2 class="schedule-title">Agenda una Nueva Cita</h2>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-4 d-flex justify-content-center mb-4">
+                    <img src="Images/muñeco lapiz.svg" alt="Muñeco agendando cita" class="img-fluid character-image">
+                </div>
+                <div class="col-lg-7">
+                    <div class="schedule-card shadow">
+                        <form id="scheduleForm">
+                            <div class="mb-3 position-relative">
+                                <input type="text" class="form-control" placeholder="Nombre del paciente" required>
+                                <img src="Images/Vector.svg" alt="Icono de lupa" class="search-icon">
+                            </div>
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <input type="date" class="form-control" placeholder="Fecha" required>
+                                </div>
+                                <div class="col mb-3">
+                                    <input type="time" class="form-control" placeholder="Hora" required>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: "Tus citas de hoy" -->
+    <div class="section-appointments py-5">
+        <div class="container text-center">
+            <div class="appointments-bubble mx-auto mb-4">
+                <h2 class="appointments-title">Tus citas de hoy</h2>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="appointments-card shadow p-4">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Hora</th>
+                                    <th>Razón</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="appointment-row">
+                                    <td>Alejandro Yujra</td>
+                                    <td>15:00 P.M</td>
+                                    <td>Cambio de brackets</td>
+                                </tr>
+                                <!-- Puedes agregar más filas de citas aquí -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 d-flex justify-content-center mb-4 mb-lg-0">
+                    <img src="Images/Personaje Con Lentes.svg" alt="Muñequito con libro" class="character-image d-none d-lg-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: "Reprograma una cita" -->
+    <div class="section-reschedule py-5">
+        <div class="container text-center">
+            <div class="reschedule-bubble mx-auto mb-4">
+                <h2 class="reschedule-title">Reprograma una cita</h2>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-lg-4 d-flex justify-content-center mb-4">
+                    <img src="Images/Personaje Con Lentes.svg" alt="Muñequito con lentes" class="img-fluid character-image-reschedule">
+                </div>
+                <div class="col-12 col-lg-7">
+                    <div class="reschedule-card shadow">
+                        <form id="rescheduleForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Nombre del paciente" required>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <input type="date" class="form-control" placeholder="Fecha" required>
+                                </div>
+                                <div class="col mb-3">
+                                    <input type="time" class="form-control" placeholder="Hora" required>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: "Cancelar una cita" -->
+    <div class="section-cancel-appointment py-5">
+        <div class="container text-center">
+            <div class="cancel-bubble mx-auto mb-4">
+                <h2 class="cancel-title">Cancelar una cita</h2>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-lg-4 d-flex justify-content-center mb-4">
+                    <img src="Images/muñeco triste.svg" alt="Muñequito cancelando cita" class="img-fluid character-image-cancel">
+                </div>
+                <div class="col-12 col-lg-7">
+                    <div class="cancel-card shadow p-4">
+                        <form id="cancelAppointmentForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Nombre del paciente" required>
+                            </div>
+                            <div id="appointmentDetails" class="text-center mb-3">
+                                <span class="placeholder-text">Inserte el nombre del paciente para ver su cita</span>
+                            </div>
+                            <div class="form-check mb-3 d-flex align-items-center">
+                                <input class="form-check-input" type="checkbox" id="confirmCancel">
+                                <label class="form-check-label ms-2" for="confirmCancel">¿Está seguro?</label>
+                                <span id="checkIcon" class="ms-2 d-none">✔️</span>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-submit">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="footer-section py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="footer-logo">
+            <a href="../2. Segunda Seccion Inicio/Inicio.html">
+                <img src="Images/Asikuy Ancho.svg" alt="Logo Asikuy" class="footer-image">
+            </a>
+        </div>
+        <div>
+            <button id="backToTopBtn" class="btn back-to-top-btn">Volver al inicio</button>
+        </div>
+    </div>
+</footer>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/script.js"></script>
+</body>
+</html>
